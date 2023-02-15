@@ -33,15 +33,6 @@ NS_ :
 BS_:
 
 BU_: IP Tester MyEcu BCM 
-VAL_TABLE_ NM_WakeupReason_Bit2 1 "Local wake-up reason";
-VAL_TABLE_ NM_WakeupReason_Bit1 1 "CAN wake-up";
-VAL_TABLE_ NM_WakeupReason_Bit0 1 "Terminal 15 on";
-VAL_TABLE_ NM_AwakeReason 0 "Default value" 1 "Local wake-up reason";
-VAL_TABLE_ NM_RMS_FlAG 0 "In repeat message state" 1 "not in repeat message state";
-VAL_TABLE_ NM_CBV_RMR 0 "RepeatMessage State no requested" 1 "RepeatMessage State requested";
-VAL_TABLE_ NM_CBV_AWB 0 "Node not woken up the network" 1 "Node has waken up the network";
-VAL_TABLE_ MyEcu_TxTestSignal0 0 "Left (Positive)" 1 "Right (Negative)";
-
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ KeyID : 0|16@0+ (1,0) [0|0] "" Vector__XXX
