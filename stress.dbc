@@ -1,7 +1,7 @@
-VERSION "HIPBNNNYNNNNNNNNNNNNNNNNNNYYYNNNNNNNNNNNNN>4/4%%/4/'%**4NNN///"
+VERSION "Excel 2 DBC"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -30,13 +30,12 @@ NS_ :
 	BU_EV_REL_
 	BU_BO_REL_
 	SG_MUL_VAL_
-
 BS_:
 
-BU_: Stress
+BU_: Stress 
 
 
-BO_ 2236372536 StressExtended1: 8 Stress
+BO_ 88888888 StressExtended1: 8 Stress
  SG_ Counter : 0|32@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1541 Info5: 8 Stress
@@ -171,7 +170,7 @@ BO_ 1 StressData3: 8 Stress
  SG_ Data : 16|16@1+ (1,0) [0|0] "" Vector__XXX
  SG_ Counter : 0|16@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2147483733 StressExtended2: 4 Stress
+BO_ 85 StressExtended2: 4 Stress
  SG_ Counter : 0|32@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 0 StressData1: 8 Stress
@@ -182,8 +181,17 @@ BO_ 0 StressData1: 8 Stress
  SG_ Counter : 0|16@1+ (1,0) [0|0] "" Vector__XXX
 
 
-
-BA_DEF_ BO_  "CycleTime" INT 5 1000;
-BA_DEF_DEF_  "CycleTime" 100;
-BA_ "CycleTime" BO_ 13 5;
-
+BA_DEF_ BO_ "GenMsgCycleTimeActive" INT 0 65535;
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgNrOfRepetitions" INT 0 65535;
+BA_DEF_ BO_ "GenMsgStartValue" STRING;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
+BA_DEF_ BU_ "NWM-Knoten" ENUM  "nein","ja";
+BA_DEF_ BU_ "NWM-Stationsadresse" HEX 0 63;
+BA_ "GenSigStartValue" SG_ 1541 CurrentCycle 50;
+BA_ "GenSigStartValue" SG_ 1540 CurrentCycle 50;
+BA_ "GenSigStartValue" SG_ 1539 CurrentCycle 50;
+BA_ "GenSigStartValue" SG_ 1538 CurrentCycle 50;
+BA_ "GenSigStartValue" SG_ 1537 CurrentCycle 50;
+BA_ "GenSigStartValue" SG_ 1536 CurrentCycle 50;
