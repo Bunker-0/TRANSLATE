@@ -1,7 +1,7 @@
-VERSION ""
+VERSION "Excel 2 DBC"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -30,10 +30,9 @@ NS_ :
 	BU_EV_REL_
 	BU_BO_REL_
 	SG_MUL_VAL_
-
 BS_:
 
-BU_: NM_Tester
+BU_: NM_Tester 
 
 
 BO_ 1280 NMMessage: 6 NM_Tester
@@ -47,19 +46,10 @@ BO_ 1280 NMMessage: 6 NM_Tester
  SG_ NM_CAN : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 
 
-
-BA_DEF_  "BusType" STRING ;
-BA_DEF_ BU_  "NodeLayerModules" STRING ;
-BA_DEF_ BU_  "ECU" STRING ;
-BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
-BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
-BA_DEF_ BU_  "CANoeDrift" INT 0 0;
-BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
-BA_DEF_DEF_  "BusType" "";
-BA_DEF_DEF_  "NodeLayerModules" "";
-BA_DEF_DEF_  "ECU" "";
-BA_DEF_DEF_  "CANoeJitterMax" 0;
-BA_DEF_DEF_  "CANoeJitterMin" 0;
-BA_DEF_DEF_  "CANoeDrift" 0;
-BA_DEF_DEF_  "CANoeStartDelay" 0;
-
+BA_DEF_ BO_ "GenMsgCycleTimeActive" INT 0 65535;
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgNrOfRepetitions" INT 0 65535;
+BA_DEF_ BO_ "GenMsgStartValue" STRING;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ BU_ "NWM-Knoten" ENUM  "nein","ja";
+BA_DEF_ BU_ "NWM-Stationsadresse" HEX 0 63;
