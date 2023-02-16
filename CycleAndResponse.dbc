@@ -1,7 +1,7 @@
-VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYNNNNNNNNNN/4/%%%/4/'%**4NNN///"
+VERSION "Excel 2 DBC"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -30,24 +30,28 @@ NS_ :
 	BU_EV_REL_
 	BU_BO_REL_
 	SG_MUL_VAL_
-
 BS_:
 
-BU_: Response CyclicSending
+BU_: Response CyclicSending 
 
 
-BO_ 2148395729 Analyze: 8 Vector__XXX
+BO_ 912081 Analyze: 8 Vector__XXX
  SG_ MinResponseTime : 16|16@1- (0.01,0) [-327.68|327.67] "ms" Vector__XXX
  SG_ MaxResponseTime : 32|16@1- (0.01,0) [-327.68|327.67] "ms" Vector__XXX
  SG_ CurResponseTime : 0|16@1- (0.01,0) [-327.68|327.67] "ms" Vector__XXX
  SG_ AvgResponseTime : 48|16@1- (0.01,0) [-327.68|327.67] "ms" Vector__XXX
 
 BO_ 256 CyclicMessage: 4 CyclicSending
- SG_ SendCount : 0|32@1- (1,0) [-2147483648|2147483647] ""  Response
+ SG_ SendCount : 0|32@1+ (1,0) [-2147483648|2147483647] "" Response
 
 BO_ 258 ResponseMessage: 4 Response
- SG_ ResponseCount : 0|32@1- (1,0) [-2147483648|2147483647] "" Vector__XXX
+ SG_ ResponseCount : 0|32@1+ (1,0) [-2147483648|2147483647] "" Vector__XXX
 
 
-
-
+BA_DEF_ BO_ "GenMsgCycleTimeActive" INT 0 65535;
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgNrOfRepetitions" INT 0 65535;
+BA_DEF_ BO_ "GenMsgStartValue" STRING;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ BU_ "NWM-Knoten" ENUM  "nein","ja";
+BA_DEF_ BU_ "NWM-Stationsadresse" HEX 0 63;
