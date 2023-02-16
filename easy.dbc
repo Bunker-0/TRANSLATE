@@ -1,7 +1,7 @@
-VERSION "DNNBNNNYNNNNNNNNNNNNNNNNNNYYYNNNNNNNNNNNNN/4/%%%/4/'%**4NNN///"
+VERSION "Excel 2 DBC"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -30,50 +30,29 @@ NS_ :
 	BU_EV_REL_
 	BU_BO_REL_
 	SG_MUL_VAL_
-
 BS_:
 
-BU_: Engine Display Light
+BU_: Engine Display Light 
+VAL_TABLE_ OnOff 0 "Off" 1 "On";
 
 
 BO_ 291 EngineState: 2 Engine
- SG_ EngineSpeed : 1|15@1- (1,0) [0|0] "rpm"  Display
- SG_ OnOff : 0|1@1+ (1,0) [0|0] ""  Display
+ SG_ EngineSpeed : 1|15@1- (1,0) [0|0] "rpm" Display
+ SG_ OnOff : 0|1@1+ (1,0) [0|0] "" Display
 
 BO_ 801 LightState: 1 Light
- SG_ FlashLight : 2|1@1+ (1,0) [0|1] ""  Display
- SG_ HeadLight : 0|1@1+ (1,0) [0|1] ""  Display
+ SG_ FlashLight : 2|1@1+ (1,0) [0|1] "" Display
+ SG_ HeadLight : 0|1@1+ (1,0) [0|1] "" Display
 
 
-
-BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 0;
-BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
-BA_DEF_ BU_  "ILUsed" ENUM  "Yes","No";
-BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 100000000000;
-BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition";
-BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 999999;
-BA_DEF_ BO_  "GenMsgDelayTime" INT 1 1000;
-BA_DEF_ BO_  "GenMsgCycleTime" INT 2 50000;
-BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive";
-BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 2 100000;
-BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
-BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
-BA_DEF_ BU_  "NodeLayerModules" STRING ;
-BA_DEF_DEF_  "GenMsgFastOnStart" 0;
-BA_DEF_DEF_  "GenSigInactiveValue" 0;
-BA_DEF_DEF_  "ILUsed" "Yes";
-BA_DEF_DEF_  "GenSigStartValue" 0;
-BA_DEF_DEF_  "GenSigSendType" "Cyclic";
-BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
-BA_DEF_DEF_  "GenMsgDelayTime" 1;
-BA_DEF_DEF_  "GenMsgCycleTime" 2;
-BA_DEF_DEF_  "GenMsgSendType" "not_used";
-BA_DEF_DEF_  "GenMsgCycleTimeFast" 100;
-BA_DEF_DEF_  "GenMsgILSupport" "Yes";
-BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
-BA_DEF_DEF_  "NodeLayerModules" "CANoeILNLVector.dll";
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgCycleTimeActive" INT 0 65535;
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgNrOfRepetitions" INT 0 65535;
+BA_DEF_ BO_ "GenMsgStartValue" STRING;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ BU_ "NWM-Knoten" ENUM  "nein","ja";
+BA_DEF_ BU_ "NWM-Stationsadresse" HEX 0 63;
 BA_ "GenMsgCycleTime" BO_ 291 100;
 BA_ "GenMsgCycleTime" BO_ 801 100;
-BA_ "GenSigSendType" SG_ 801 HeadLight 3;
-VAL_ 291 OnOff 1 "On" 0 "Off" ;
-
+VAL_ 291 OnOff 0 "Off" 1 "On";
