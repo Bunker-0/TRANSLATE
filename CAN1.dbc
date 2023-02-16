@@ -1,7 +1,7 @@
-VERSION ""
+VERSION "Excel 2 DBC"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -30,36 +30,16 @@ NS_ :
 	BU_EV_REL_
 	BU_BO_REL_
 	SG_MUL_VAL_
-
 BS_:
 
-BU_: DoorFR DoorFL
+BU_: DoorFR DoorFL 
 
 
 
-
-BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
-BA_DEF_  "DBName" STRING ;
-BA_DEF_  "BusType" STRING ;
-BA_DEF_ BU_  "NodeLayerModules" STRING ;
-BA_DEF_ BU_  "ECU" STRING ;
-BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
-BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
-BA_DEF_ BU_  "CANoeDrift" INT 0 0;
-BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
-BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
-BA_DEF_DEF_  "CANFD_BRS" "1";
-BA_DEF_DEF_  "DBName" "";
-BA_DEF_DEF_  "BusType" "";
-BA_DEF_DEF_  "NodeLayerModules" "";
-BA_DEF_DEF_  "ECU" "";
-BA_DEF_DEF_  "CANoeJitterMax" 0;
-BA_DEF_DEF_  "CANoeJitterMin" 0;
-BA_DEF_DEF_  "CANoeDrift" 0;
-BA_DEF_DEF_  "CANoeStartDelay" 0;
-BA_DEF_DEF_  "VFrameFormat" "StandardCAN";
-BA_ "BusType" "CAN FD";
-BA_ "DBName" "CAN1";
-BA_ "NodeLayerModules" BU_ DoorFR " ";
-BA_ "NodeLayerModules" BU_ DoorFL " ";
-
+BA_DEF_ BO_ "GenMsgCycleTimeActive" INT 0 65535;
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 65535;
+BA_DEF_ BO_ "GenMsgNrOfRepetitions" INT 0 65535;
+BA_DEF_ BO_ "GenMsgStartValue" STRING;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ BU_ "NWM-Knoten" ENUM  "nein","ja";
+BA_DEF_ BU_ "NWM-Stationsadresse" HEX 0 63;
